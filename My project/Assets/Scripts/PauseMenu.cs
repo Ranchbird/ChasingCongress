@@ -11,6 +11,8 @@ public class PauseMenu : MonoBehaviour
     [Header("Sub-Menus")]
     public GameObject optionsPanel;
     public GameObject helpPanel;
+    public GameObject soundPanel;
+    public GameObject controlsPanel;
 
     [Header("Help Panels")]
     public GameObject helpPanel1;
@@ -33,7 +35,7 @@ public class PauseMenu : MonoBehaviour
         if (window == null)
             window = GetComponentInChildren<RectTransform>();
 
-        
+
         gameObject.SetActive(true);
         canvasGroup.alpha = 0f;
         canvasGroup.interactable = false;
@@ -162,14 +164,14 @@ public class PauseMenu : MonoBehaviour
 
         window.gameObject.SetActive(true);
 
-        
+
         window.localScale = Vector3.one * 0.8f;
         window.DOScale(1f, 0.25f)
               .SetEase(Ease.OutBack)
               .SetUpdate(true);
     }
 
-    
+
     public void CloseOptionsPanel()
     {
         if (optionsPanel != null)
@@ -179,7 +181,7 @@ public class PauseMenu : MonoBehaviour
     }
 
 
-    
+
     public void CloseHelpPanel()
     {
         if (helpPanel != null)
